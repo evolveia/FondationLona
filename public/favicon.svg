@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <!-- Rounded institutional background square -->
+  <rect width="128" height="128" rx="28" fill="#183D73" />
+  
+  <g transform="translate(4, 2)">
+    <!-- Golden Arch -->
+    <path d="M 24 74 A 36 36 0 0 1 96 74" stroke="#E8B84B" stroke-width="9" stroke-linecap="round" fill="none" />
+
+    <!-- Open Book Base in Gold & White -->
+    <path d="M 18 72 C 38 82 52 82 60 98 C 68 82 82 82 102 72 C 99 88 84 100 60 104 C 36 100 21 88 18 72 Z" fill="#E8B84B" />
+    <path d="M 60 88 L 60 104" stroke="#183D73" stroke-width="2.5" stroke-linecap="round" />
+
+    <!-- Center Radiant 4-Point Golden Star -->
+    <path d="M 60 42 Q 60 56 72 56 Q 60 56 60 70 Q 60 56 48 56 Q 60 56 60 42 Z" fill="#FFFFFF" />
+    <circle cx="60" cy="56" r="2" fill="#E8B84B" />
+
+    <!-- Left Golden Star -->
+    <path d="M 40 36 Q 40 44 46 44 Q 40 44 40 52 Q 40 44 34 44 Q 40 44 40 36 Z" fill="#F8E5A0" />
+
+    <!-- Right Golden Star -->
+    <path d="M 80 28 Q 80 36 87 36 Q 80 36 80 44 Q 80 36 73 36 Q 80 36 80 28 Z" fill="#F8E5A0" />
+  </g>
+</svg>

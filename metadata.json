@@ -1,0 +1,6 @@
+{
+  "name": "Fondation Lona",
+  "description": "Portail officiel de la Fondation Lona, présidée par la Première Dame de la RDC Denise Nyakeru Tshisekedi. Ensemble, semons l'excellence.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
