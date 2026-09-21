@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { LonaLogo } from './LonaLogo';
 import { ChevronDown, Menu, X, Heart, Globe, ShieldCheck } from 'lucide-react';
 import { Language } from '../types';
 import { FlagIcon } from './FlagIcon';
@@ -108,7 +107,13 @@ export const Header: React.FC<HeaderProps> = ({ onDonateClick }) => {
             aria-label="Fondation Lona - https://fondationlona.org/"
             title="Fondation Lona - https://fondationlona.org/"
           >
-            <LonaLogo variant="full" showSlogan={false} size="md" />
+            <img
+              src="/logolona-png.png"
+              alt="Fondation Lona - Ensemble, semons l'excellence"
+              className="h-8 sm:h-9 md:h-10 lg:h-12 w-auto object-contain select-none"
+              loading="eager"
+              decoding="async"
+            />
           </a>
 
           {/* Desktop Navigation: single-line guarantee with whitespace-nowrap and balanced typography */}
@@ -267,7 +272,12 @@ export const Header: React.FC<HeaderProps> = ({ onDonateClick }) => {
           >
             {/* Mobile Menu Drawer Header with Logo */}
             <div className="flex items-center justify-between pb-3 mb-2 border-b border-slate-100">
-              <LonaLogo variant="full" theme="navy" size="sm" />
+              <img
+                src="/logolona-png.png"
+                alt="Fondation Lona"
+                className="h-8 sm:h-9 w-auto object-contain select-none"
+                loading="eager"
+              />
               <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
                 Menu Officiel
               </span>

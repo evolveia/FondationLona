@@ -25,7 +25,7 @@ export const translations: Record<Language, Record<string, string>> = {
 
     // Hero Slides
     'hero.slide1.tag': 'ÉDUCATION & JEUNESSE',
-    'hero.slide1.title': "Ensemble, semons l'excellence dans l'éducation",
+    'hero.slide1.title': "Ensemble Sommes-nous Excellence dans l'éducation",
     'hero.slide1.subtitle': "Capaciter et propulser les jeunes talents de la RDC pour bâtir l'avenir de notre nation avec le programme EXCELLENTIA.",
     'hero.slide1.cta': 'Découvrir le Programme EXCELLENTIA',
     'hero.slide1.stat': '1 000+ Boursiers Nationaux & Internationaux',
@@ -350,7 +350,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'cta.discover': 'Saiba Mais',
 
     'hero.slide1.tag': 'EDUCAÇÃO & JUVENTUDE',
-    'hero.slide1.title': 'Ensemble, semons l’excellence dans l’éducation',
+    'hero.slide1.title': "Ensemble Sommes-nous Excellence dans l'éducation",
     'hero.slide1.subtitle': 'Capacitando os jovens talentos da RDC para construir o futuro através do programa EXCELLENTIA.',
     'hero.slide1.cta': 'Conheça o Programa EXCELLENTIA',
     'hero.slide1.stat': '+1.000 Bolsistas Nacionais e Internacionais',

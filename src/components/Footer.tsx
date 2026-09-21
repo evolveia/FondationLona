@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { LonaLogo } from './LonaLogo';
 import { Mail, ArrowRight, Heart, Shield, CheckCircle, Globe } from 'lucide-react';
 import { FlagIcon } from './FlagIcon';
 
@@ -32,7 +31,13 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
           {/* Col 1: Brand & Presentation */}
           <div className="lg:col-span-4 space-y-4">
-            <LonaLogo variant="full" theme="white" showSlogan={false} size="lg" />
+            <img
+              src="/logolona-white-png.png"
+              alt="Fondation Lona"
+              className="h-9 sm:h-11 md:h-12 lg:h-14 w-auto object-contain select-none"
+              loading="lazy"
+              decoding="async"
+            />
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed pt-2">
               {t('footer.about')}
             </p>
