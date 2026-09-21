@@ -125,11 +125,11 @@ export const Header: React.FC<HeaderProps> = ({ onDonateClick }) => {
         id="main-header"
         className={`sticky top-0 z-50 transition-all duration-300 backdrop-blur-md ${
           isScrolled
-            ? 'bg-white/95 shadow-md border-b border-slate-200/80 py-2'
-            : 'bg-white/90 border-b border-slate-200/60 py-3'
+            ? 'bg-white/95 shadow-md border-b border-slate-200/80 py-3 sm:py-3.5 lg:py-2'
+            : 'bg-white/90 border-b border-slate-200/60 py-4 sm:py-4.5 lg:py-3'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
+        <div className="max-w-7xl mx-auto px-3.5 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
           {/* Official Logo */}
           <a
             href="https://fondationlona.org/"
@@ -140,7 +140,7 @@ export const Header: React.FC<HeaderProps> = ({ onDonateClick }) => {
             <img
               src="/logolona-png.png"
               alt="Fondation Lona - Ensemble, semons l'excellence"
-              className="h-8 sm:h-9 md:h-10 lg:h-12 w-auto object-contain select-none"
+              className="h-10 sm:h-11 md:h-12 lg:h-12 w-auto object-contain select-none"
               loading="eager"
               decoding="async"
             />
@@ -236,22 +236,22 @@ export const Header: React.FC<HeaderProps> = ({ onDonateClick }) => {
             </button>
           </div>
 
-          {/* Mobile controls: neatly sized, responsive, no breaking into two lines */}
-          <div className="flex items-center gap-1.5 sm:gap-2 lg:hidden shrink-0">
+          {/* Mobile & Tablet controls: enhanced height, proportion, and comfortable touch targets */}
+          <div className="flex items-center gap-2 sm:gap-2.5 lg:hidden shrink-0">
             {/* Mobile language button */}
             <button
               onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-              className="px-2 py-1.5 sm:px-2.5 sm:py-2 text-slate-700 hover:bg-slate-100 rounded-lg border border-slate-200 flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs cursor-pointer"
+              className="px-2.5 py-2 sm:px-3 sm:py-2.5 text-slate-700 hover:bg-slate-100 rounded-lg border border-slate-200 flex items-center gap-1.5 text-xs cursor-pointer shadow-2xs"
               aria-label="Sélectionner la langue"
             >
               <FlagIcon code={currentLanguageOption.code} className="w-4 h-3 shadow-xs" />
-              <span className="font-bold text-[#183D73] uppercase">{currentLanguageOption.code}</span>
+              <span className="font-bold text-[#183D73] uppercase text-xs">{currentLanguageOption.code}</span>
             </button>
 
-            {/* Mobile Donate button - clean compact padding and single-line guarantee */}
+            {/* Mobile Donate button */}
             <button
               onClick={onDonateClick}
-              className="px-2.5 sm:px-3 py-1.5 sm:py-2 bg-[#E8B84B] hover:bg-[#d4a338] text-[#0F2648] font-extrabold text-[11px] sm:text-xs rounded-lg uppercase shadow-xs cursor-pointer whitespace-nowrap"
+              className="px-3.5 sm:px-4 py-2 sm:py-2.5 bg-[#E8B84B] hover:bg-[#d4a338] text-[#0F2648] font-extrabold text-xs rounded-lg uppercase shadow-xs cursor-pointer whitespace-nowrap"
             >
               {t('cta.donate')}
             </button>
@@ -260,10 +260,10 @@ export const Header: React.FC<HeaderProps> = ({ onDonateClick }) => {
             <button
               id="mobile-menu-toggle"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-1.5 sm:p-2 text-[#183D73] hover:bg-slate-100 rounded-lg focus:outline-none cursor-pointer"
+              className="p-2 sm:p-2.5 text-[#183D73] hover:bg-slate-100 rounded-lg focus:outline-none cursor-pointer"
               aria-label="Ouvrir le menu"
             >
-              {isMobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
+              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
@@ -298,22 +298,9 @@ export const Header: React.FC<HeaderProps> = ({ onDonateClick }) => {
         {isMobileMenuOpen && (
           <div
             id="mobile-nav-drawer"
-            className="lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 shadow-xl animate-in slide-in-from-top-2 duration-200"
+            className="lg:hidden bg-white border-b border-slate-200 px-4 pt-4 pb-6 shadow-xl animate-in slide-in-from-top-2 duration-200"
           >
-            {/* Mobile Menu Drawer Header with Logo */}
-            <div className="flex items-center justify-between pb-3 mb-2 border-b border-slate-100">
-              <img
-                src="/logolona-png.png"
-                alt="Fondation Lona"
-                className="h-8 sm:h-9 w-auto object-contain select-none"
-                loading="eager"
-              />
-              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                Menu Officiel
-              </span>
-            </div>
-
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col space-y-1">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
