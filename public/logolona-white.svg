@@ -1,11 +1,84 @@
-<?xml version="1.0" standalone="no"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
- "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
-<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
- width="287.000000pt" height="103.000000pt" viewBox="0 0 287.000000 103.000000"
- preserveAspectRatio="xMidYMid meet">
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 270 95" width="810" height="285" fill="none">
+  <defs>
+    <!-- Warm Radiant Golden Star Gradient -->
+    <linearGradient id="lonaGoldW" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF0A8" />
+      <stop offset="50%" stop-color="#E5BA5A" />
+      <stop offset="100%" stop-color="#C69244" />
+    </linearGradient>
+  </defs>
 
-<g transform="translate(0.000000,103.000000) scale(0.100000,-0.100000)"
-fill="#000000" stroke="none">
-</g>
+  <!-- Typography Block (Left) in Pure White -->
+  <g id="brand-typography">
+    <!-- 'Fondation' in Pure White -->
+    <text
+      x="6"
+      y="31"
+      font-family="Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+      font-size="22.5"
+      font-weight="600"
+      fill="#FFFFFF"
+      letter-spacing="0.2"
+    >Fondation</text>
+
+    <!-- Capital 'L' in pure white with signature inner leaf cutout -->
+    <path
+      d="M 6 43 L 23 43 L 23 66 C 25 73 33 79 42 79 L 55 79 L 55 93 L 6 93 Z"
+      fill="#FFFFFF"
+    />
+
+    <!-- 'ona' in bold white -->
+    <text
+      x="56"
+      y="93"
+      font-family="Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif"
+      font-size="54"
+      font-weight="800"
+      fill="#FFFFFF"
+      letter-spacing="-1.5"
+    >ona</text>
+  </g>
+
+  <!-- Official Emblem Block (Right) in Pure White with Gold Stars -->
+  <g id="brand-emblem" transform="translate(155, 0)">
+    <!-- Outer Arch Dome in White -->
+    <path
+      d="M 13 58 A 43 43 0 0 1 109 58"
+      stroke="#FFFFFF"
+      stroke-width="11"
+      stroke-linecap="round"
+      fill="none"
+    />
+
+    <!-- Open Book Foundation with Central V-Seam in White -->
+    <!-- Left Page -->
+    <path
+      d="M 7 54 C 27 64 45 64 54 84 C 51 87 38 86 26 82 C 15 78 9 68 7 54 Z"
+      fill="#FFFFFF"
+    />
+    <!-- Right Page -->
+    <path
+      d="M 105 54 C 85 64 67 64 58 84 C 61 87 74 86 86 82 C 97 78 103 68 105 54 Z"
+      fill="#FFFFFF"
+    />
+
+    <!-- Center Radiant 4-Point Golden Star -->
+    <path
+      d="M 56 28 Q 56 44 70 44 Q 56 44 56 60 Q 56 44 42 44 Q 56 44 56 28 Z"
+      fill="url(#lonaGoldW)"
+    />
+
+    <!-- Upper Right 4-Point Golden Star -->
+    <path
+      d="M 80 16 Q 80 23 87 23 Q 80 23 80 30 Q 80 23 73 23 Q 80 23 80 16 Z"
+      fill="url(#lonaGoldW)"
+    />
+
+    <!-- Upper Left 4-Point Golden Star -->
+    <path
+      d="M 35 24 Q 35 30 40 30 Q 35 30 35 36 Q 35 30 30 30 Q 35 30 35 24 Z"
+      fill="url(#lonaGoldW)"
+    />
+  </g>
 </svg>

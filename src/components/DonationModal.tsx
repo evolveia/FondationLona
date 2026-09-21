@@ -133,12 +133,14 @@ export const DonationModal: React.FC<DonationModalProps> = ({
           <div className="absolute top-0 right-0 w-64 h-64 bg-[#E8B84B]/10 rounded-full blur-2xl pointer-events-none" />
 
           <div className="flex items-center gap-3 relative z-10">
-            <div className="w-10 h-10 rounded-2xl bg-[#E8B84B] text-[#0F2648] flex items-center justify-center font-bold shadow-md">
-              <Heart className="w-5 h-5 fill-[#0F2648]" />
-            </div>
-            <div>
-              <h3 className="text-lg sm:text-xl font-extrabold tracking-tight text-white leading-tight">
-                {step === 4 ? "Merci pour votre générosité !" : "Faire un Don à la Fondation Lona"}
+            <img
+              src="/logolona-white-png.png"
+              alt="Fondation Lona"
+              className="h-8 sm:h-9 w-auto object-contain shrink-0"
+            />
+            <div className="border-l border-white/20 pl-3">
+              <h3 className="text-base sm:text-lg font-extrabold tracking-tight text-white leading-tight">
+                {step === 4 ? "Merci pour votre générosité !" : "Faire un Don Sécurisé"}
               </h3>
               <p className="text-xs text-slate-300 font-medium">
                 {step === 1 && "Étape 1 sur 3 • Montant & Affectation du Don"}
@@ -642,9 +644,11 @@ export const DonationModal: React.FC<DonationModalProps> = ({
                     </span>
                     <span className="text-xs text-slate-300 font-mono">Réf : {receiptNumber}</span>
                   </div>
-                  <div className="w-8 h-8 rounded-lg bg-[#E8B84B] flex items-center justify-center text-[#0F2648] font-bold text-xs">
-                    FL
-                  </div>
+                  <img
+                    src="/logolona-white-png.png"
+                    alt="Fondation Lona"
+                    className="h-6 w-auto object-contain"
+                  />
                 </div>
 
                 <div className="space-y-1.5 text-xs text-slate-200">

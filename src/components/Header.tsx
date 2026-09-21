@@ -265,7 +265,15 @@ export const Header: React.FC<HeaderProps> = ({ onDonateClick }) => {
             id="mobile-nav-drawer"
             className="lg:hidden bg-white border-b border-slate-200 px-4 pt-3 pb-6 shadow-xl animate-in slide-in-from-top-2 duration-200"
           >
-            <div className="flex flex-col space-y-3">
+            {/* Mobile Menu Drawer Header with Logo */}
+            <div className="flex items-center justify-between pb-3 mb-2 border-b border-slate-100">
+              <LonaLogo variant="full" theme="navy" size="sm" />
+              <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                Menu Officiel
+              </span>
+            </div>
+
+            <div className="flex flex-col space-y-2">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
