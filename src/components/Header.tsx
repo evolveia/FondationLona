@@ -1,8 +1,35 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { ChevronDown, Menu, X, Heart, Globe, ShieldCheck } from 'lucide-react';
+import { ChevronDown, Menu, X, Heart, Globe, ShieldCheck, Facebook, Instagram, Youtube } from 'lucide-react';
 import { Language } from '../types';
 import { FlagIcon } from './FlagIcon';
+
+const socialLinks = [
+  {
+    name: 'Facebook',
+    href: 'https://facebook.com/fondationlona',
+    icon: <Facebook className="w-3.5 h-3.5" />,
+  },
+  {
+    name: 'X (Twitter)',
+    href: 'https://x.com/fondationlona',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5" aria-hidden="true">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+  },
+  {
+    name: 'Instagram',
+    href: 'https://instagram.com/fondationlona',
+    icon: <Instagram className="w-3.5 h-3.5" />,
+  },
+  {
+    name: 'YouTube',
+    href: 'https://youtube.com/@fondationlona',
+    icon: <Youtube className="w-3.5 h-3.5" />,
+  },
+];
 
 interface HeaderProps {
   onDonateClick: () => void;
@@ -72,20 +99,23 @@ export const Header: React.FC<HeaderProps> = ({ onDonateClick }) => {
               Fondation Lona • Présidence de la République Démocratique du Congo
             </span>
           </div>
-          <div className="flex items-center gap-4 text-slate-300">
-            <a
-              href="https://fondationlona.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-slate-300 hover:text-[#E8B84B] transition-colors flex items-center gap-1 font-medium"
-            >
-              <span>Site Officiel :</span>
-              <span className="underline decoration-[#E8B84B]/60">fondationlona.org</span>
-            </a>
-            <span>|</span>
-            <span className="text-[#E8B84B] font-semibold tracking-wide">
-              {t('brand.slogan')}
-            </span>
+          <div className="flex items-center gap-3 text-slate-300">
+            <span className="text-[11px] text-slate-400 font-medium">Réseaux officiels :</span>
+            <div className="flex items-center gap-2">
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={social.name}
+                  title={social.name}
+                  className="text-slate-300 hover:text-[#E8B84B] transition-colors p-1 hover:bg-white/10 rounded flex items-center justify-center"
+                >
+                  {social.icon}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -332,6 +362,28 @@ export const Header: React.FC<HeaderProps> = ({ onDonateClick }) => {
                   <Heart className="w-4 h-4 fill-[#0F2648]" />
                   {t('cta.donate_now')}
                 </button>
+              </div>
+
+              {/* Social Media Links in Mobile Menu */}
+              <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400">
+                  Suivez-nous
+                </span>
+                <div className="flex items-center gap-2">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.name}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={social.name}
+                      title={social.name}
+                      className="w-8 h-8 rounded-lg bg-slate-100 hover:bg-[#183D73] text-[#183D73] hover:text-white transition-colors flex items-center justify-center"
+                    >
+                      {social.icon}
+                    </a>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

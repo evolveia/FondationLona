@@ -1,7 +1,38 @@
 import React, { useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Mail, ArrowRight, Heart, Shield, CheckCircle, Globe } from 'lucide-react';
+import { Mail, ArrowRight, Heart, Shield, CheckCircle, Globe, Facebook, Instagram, Youtube } from 'lucide-react';
 import { FlagIcon } from './FlagIcon';
+
+const socialLinks = [
+  {
+    name: 'Facebook',
+    href: 'https://facebook.com/fondationlona',
+    icon: <Facebook className="w-4 h-4" />,
+    label: 'Facebook',
+  },
+  {
+    name: 'X (Twitter)',
+    href: 'https://x.com/fondationlona',
+    icon: (
+      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4" aria-hidden="true">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+      </svg>
+    ),
+    label: 'X (Twitter)',
+  },
+  {
+    name: 'Instagram',
+    href: 'https://instagram.com/fondationlona',
+    icon: <Instagram className="w-4 h-4" />,
+    label: 'Instagram',
+  },
+  {
+    name: 'YouTube',
+    href: 'https://youtube.com/@fondationlona',
+    icon: <Youtube className="w-4 h-4" />,
+    label: 'YouTube',
+  },
+];
 
 export const Footer: React.FC = () => {
   const { t, language, setLanguage, availableLanguages } = useLanguage();
@@ -28,8 +59,8 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-[#0F2648] text-white pt-16 pb-12 border-t border-white/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
-          {/* Col 1: Brand & Presentation */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 pb-12 border-b border-white/10">
+          {/* Col 1: Brand & Presentation + Social Links */}
           <div className="lg:col-span-4 space-y-4">
             <img
               src="/logolona-white-png.png"
@@ -38,62 +69,91 @@ export const Footer: React.FC = () => {
               loading="lazy"
               decoding="async"
             />
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed pt-2">
+            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed pt-1">
               {t('footer.about')}
             </p>
-            <div className="flex items-center gap-3 pt-2 text-xs text-slate-400">
+            <div className="flex items-center gap-3 text-xs text-slate-400">
               <span className="w-2 h-2 rounded-full bg-[#E8B84B]" />
               <span>Présidence de la République Démocratique du Congo</span>
             </div>
+
+            {/* Social Media Links in Footer */}
+            <div className="pt-2">
+              <p className="text-xs font-bold uppercase tracking-wider text-[#E8B84B] mb-2.5">
+                Suivez-nous sur les réseaux
+              </p>
+              <div className="flex items-center gap-2.5">
+                {socialLinks.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={social.name}
+                    title={social.name}
+                    className="w-9 h-9 rounded-xl bg-white/10 hover:bg-[#E8B84B] text-white hover:text-[#0F2648] flex items-center justify-center transition-all duration-200 border border-white/10 hover:border-[#E8B84B] hover:scale-105 shadow-sm"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
+              </div>
+            </div>
           </div>
 
-          {/* Col 2: Navigation Links */}
-          <div className="lg:col-span-3 space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#E8B84B]">
-              {t('footer.links')}
-            </h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
-              {navLinks.map((l) => (
-                <li key={l.href}>
-                  <a
-                    href={l.href}
-                    className="hover:text-[#E8B84B] transition-colors flex items-center gap-1.5"
-                  >
+          {/* Col 2 & 3: Liens Rapides & Gouvernance Side-by-Side in 2 Columns on Tablet & Mobile */}
+          <div className="lg:col-span-5 grid grid-cols-2 gap-6 sm:gap-8">
+            {/* Sub-col 1: Navigation Links (Liens Rapides) */}
+            <div className="space-y-3">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#E8B84B]">
+                {t('footer.links')}
+              </h4>
+              <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
+                {navLinks.map((l) => (
+                  <li key={l.href}>
+                    <a
+                      href={l.href}
+                      className="hover:text-[#E8B84B] transition-colors flex items-center gap-1.5"
+                    >
+                      <span className="text-[#E8B84B]">›</span>
+                      <span>{t(l.labelKey)}</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Sub-col 2: Legal & Governance */}
+            <div className="space-y-3">
+              <h4 className="text-xs font-bold uppercase tracking-wider text-[#E8B84B]">
+                Gouvernance
+              </h4>
+              <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
+                <li>
+                  <a href="#transparency" className="hover:text-[#E8B84B] transition-colors flex items-center gap-1.5">
                     <span className="text-[#E8B84B]">›</span>
-                    <span>{t(l.labelKey)}</span>
+                    <span>Rapports Annuels</span>
                   </a>
                 </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Col 3: Legal & Governance */}
-          <div className="lg:col-span-2 space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-[#E8B84B]">
-              Gouvernance
-            </h4>
-            <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
-              <li>
-                <a href="#transparency" className="hover:text-[#E8B84B] transition-colors">
-                  Rapports Annuels
-                </a>
-              </li>
-              <li>
-                <a href="#transparency" className="hover:text-[#E8B84B] transition-colors">
-                  Audits Indépendants
-                </a>
-              </li>
-              <li>
-                <a href="#transparency" className="hover:text-[#E8B84B] transition-colors">
-                  Normes ESG
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#E8B84B] transition-colors">
-                  Politique de Confidentialité
-                </a>
-              </li>
-            </ul>
+                <li>
+                  <a href="#transparency" className="hover:text-[#E8B84B] transition-colors flex items-center gap-1.5">
+                    <span className="text-[#E8B84B]">›</span>
+                    <span>Audits Indépendants</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#transparency" className="hover:text-[#E8B84B] transition-colors flex items-center gap-1.5">
+                    <span className="text-[#E8B84B]">›</span>
+                    <span>Normes ESG</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="#about" className="hover:text-[#E8B84B] transition-colors flex items-center gap-1.5">
+                    <span className="text-[#E8B84B]">›</span>
+                    <span>Confidentialité</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
 
           {/* Col 4: Newsletter */}

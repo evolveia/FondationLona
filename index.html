@@ -1,39 +1,63 @@
 <!doctype html>
-<html lang="fr" class="scroll-smooth">
+<html lang="fr" class="scroll-smooth" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fondation Lona | Ensemble, semons l'excellence</title>
+    <meta name="title" content="Fondation Lona | Ensemble, semons l'excellence" />
     <meta name="description" content="Portail officiel de la Fondation Lona, présidée par la Première Dame de la République Démocratique du Congo, Denise Nyakeru Tshisekedi. Ensemble, semons l'excellence." />
+    <meta name="author" content="Fondation Lona - Denise Nyakeru Tshisekedi" />
     
     <!-- Favicon & Apple Touch Icon -->
     <link rel="icon" type="image/png" sizes="192x192" href="/pwa-192x192.png" />
     <link rel="icon" type="image/png" sizes="512x512" href="/pwa-512x512.png" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="alternate icon" href="/favicon.ico" />
     
     <!-- Canonical & Official Domain -->
     <link rel="canonical" href="https://fondationlona.org/" />
 
-    <!-- Open Graph / Facebook / WhatsApp -->
+    <!-- Open Graph Protocol (Facebook, WhatsApp, LinkedIn, Telegram) -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://fondationlona.org/" />
     <meta property="og:site_name" content="Fondation Lona" />
-    <meta property="og:title" content="Fondation Lona - Ensemble, semons l'excellence" />
-    <meta property="og:description" content="Organisation à but non lucratif présidée par la Première Dame de la RDC, Denise Nyakeru Tshisekedi." />
-    <meta property="og:image" content="/pwa-512x512.png" />
+    <meta property="og:title" content="Fondation Lona | Ensemble, semons l'excellence" />
+    <meta property="og:description" content="Portail officiel de la Fondation Lona, présidée par la Première Dame de la RDC Denise Nyakeru Tshisekedi : Bourses d'excellence EXCELLENTIA, santé et lutte contre la drépanocytose, autonomisation des femmes." />
+    
+    <!-- Primary Open Graph Image (1200x630 Landscape Card) -->
+    <meta property="og:image" content="https://fondationlona.org/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://fondationlona.org/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Fondation Lona - Ensemble, semons l'excellence" />
+
+    <!-- Secondary Square Open Graph Image (WhatsApp Compact Preview) -->
+    <meta property="og:image" content="https://fondationlona.org/og-image-square.jpg" />
+    <meta property="og:image:secure_url" content="https://fondationlona.org/og-image-square.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="800" />
+    <meta property="og:image:height" content="800" />
+    <meta property="og:image:alt" content="Fondation Lona - Bourses EXCELLENTIA" />
+
+    <!-- Tertiary Open Graph Image (512x512 High-Res Emblem) -->
+    <meta property="og:image" content="https://fondationlona.org/pwa-512x512.png" />
+    <meta property="og:image:secure_url" content="https://fondationlona.org/pwa-512x512.png" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="512" />
     <meta property="og:image:height" content="512" />
+
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:locale:alternate" content="pt_BR" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Fondation Lona" />
-    <meta name="twitter:description" content="Ensemble, semons l'excellence dans l'éducation, la santé et l'autonomisation." />
-    <meta name="twitter:image" content="/pwa-512x512.png" />
+    <meta name="twitter:url" content="https://fondationlona.org/" />
+    <meta name="twitter:title" content="Fondation Lona | Ensemble, semons l'excellence" />
+    <meta name="twitter:description" content="Portail officiel de la Fondation Lona, présidée par la Première Dame de la RDC Denise Nyakeru Tshisekedi. Ensemble, semons l'excellence." />
+    <meta name="twitter:image" content="https://fondationlona.org/og-image.jpg" />
+    <meta name="twitter:image:alt" content="Fondation Lona - Ensemble, semons l'excellence" />
 
     <!-- Schema.org JSON-LD Structured Data for NGO -->
     <script type="application/ld+json">
@@ -44,6 +68,7 @@
       "alternateName": "Fondation Denise Nyakeru Tshisekedi",
       "url": "https://fondationlona.org/",
       "logo": "https://fondationlona.org/logolona-png.png",
+      "image": "https://fondationlona.org/og-image.jpg",
       "founder": {
         "@type": "Person",
         "name": "Denise Nyakeru Tshisekedi",
