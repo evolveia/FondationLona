@@ -100,15 +100,15 @@ export const Header: React.FC<HeaderProps> = ({ onDonateClick }) => {
             : 'bg-white/90 border-b border-slate-200/60 py-3'
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
-          {/* Logo with Slogan - matching logolona.png */}
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4">
+          {/* Official Logo */}
           <a
             href="https://fondationlona.org/"
             className="flex items-center transition-transform duration-200 hover:opacity-95 shrink-0"
             aria-label="Fondation Lona - https://fondationlona.org/"
             title="Fondation Lona - https://fondationlona.org/"
           >
-            <LonaLogo variant="full" showSlogan={true} size="md" />
+            <LonaLogo variant="full" showSlogan={false} size="md" />
           </a>
 
           {/* Desktop Navigation: single-line guarantee with whitespace-nowrap and balanced typography */}
@@ -124,8 +124,8 @@ export const Header: React.FC<HeaderProps> = ({ onDonateClick }) => {
             ))}
           </nav>
 
-          {/* Actions: Language Dropdown + Gold Donate CTA */}
-          <div className="hidden sm:flex items-center gap-3">
+          {/* Desktop Actions: Language Dropdown + Gold Donate CTA */}
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
             {/* Language Selector Dropdown */}
             <div className="relative" ref={langMenuRef}>
               <button
@@ -201,22 +201,22 @@ export const Header: React.FC<HeaderProps> = ({ onDonateClick }) => {
             </button>
           </div>
 
-          {/* Mobile controls */}
-          <div className="flex items-center gap-2 lg:hidden">
+          {/* Mobile controls: neatly sized, responsive, no breaking into two lines */}
+          <div className="flex items-center gap-1.5 sm:gap-2 lg:hidden shrink-0">
             {/* Mobile language button */}
             <button
               onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
-              className="p-2 text-slate-700 hover:bg-slate-100 rounded-lg border border-slate-200 flex items-center gap-1.5 text-xs cursor-pointer"
+              className="px-2 py-1.5 sm:px-2.5 sm:py-2 text-slate-700 hover:bg-slate-100 rounded-lg border border-slate-200 flex items-center gap-1 sm:gap-1.5 text-[11px] sm:text-xs cursor-pointer"
               aria-label="Sélectionner la langue"
             >
               <FlagIcon code={currentLanguageOption.code} className="w-4 h-3 shadow-xs" />
               <span className="font-bold text-[#183D73] uppercase">{currentLanguageOption.code}</span>
             </button>
 
-            {/* Mobile Donate button */}
+            {/* Mobile Donate button - clean compact padding and single-line guarantee */}
             <button
               onClick={onDonateClick}
-              className="px-3 py-2 bg-[#E8B84B] text-[#0F2648] font-bold text-xs rounded-lg uppercase shadow-sm cursor-pointer"
+              className="px-2.5 sm:px-3 py-1.5 sm:py-2 bg-[#E8B84B] hover:bg-[#d4a338] text-[#0F2648] font-extrabold text-[11px] sm:text-xs rounded-lg uppercase shadow-xs cursor-pointer whitespace-nowrap"
             >
               {t('cta.donate')}
             </button>
@@ -225,10 +225,10 @@ export const Header: React.FC<HeaderProps> = ({ onDonateClick }) => {
             <button
               id="mobile-menu-toggle"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 text-[#183D73] hover:bg-slate-100 rounded-lg focus:outline-none cursor-pointer"
+              className="p-1.5 sm:p-2 text-[#183D73] hover:bg-slate-100 rounded-lg focus:outline-none cursor-pointer"
               aria-label="Ouvrir le menu"
             >
-              {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
             </button>
           </div>
         </div>

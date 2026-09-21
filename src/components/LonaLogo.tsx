@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface LonaLogoProps {
-  variant?: 'full' | 'emblem' | 'horizontal';
+  variant?: 'full' | 'emblem';
   theme?: 'navy' | 'white';
   showSlogan?: boolean;
   className?: string;
@@ -11,117 +11,212 @@ interface LonaLogoProps {
 export const LonaLogo: React.FC<LonaLogoProps> = ({
   variant = 'full',
   theme = 'navy',
-  showSlogan = true,
+  showSlogan = false,
   className = '',
   size = 'md',
 }) => {
   const isWhite = theme === 'white';
-  const navyColor = isWhite ? '#FFFFFF' : '#183D73';
-  const goldColor = '#D49B28';
-  const goldLight = '#F5D070';
-  const goldDark = '#B88218';
-  const sloganColor = isWhite ? '#E2E8F0' : '#475569';
+  const mainColor = isWhite ? '#FFFFFF' : '#122C54';
+  const dividerColor = isWhite ? '#0F2648' : '#FFFFFF';
 
-  // Dimension scaling
-  const scale = size === 'sm' ? 0.75 : size === 'md' ? 1 : size === 'lg' ? 1.25 : 1.5;
+  // Responsive dimensions
+  // sm: mobile compact, md: header standard, lg: footer prominent
+  const heights = {
+    sm: 'h-8 sm:h-9',
+    md: 'h-9 sm:h-11',
+    lg: 'h-11 sm:h-14',
+    xl: 'h-14 sm:h-16',
+  };
 
-  // The Emblem SVG containing the arch, 3 four-pointed stars, and open book base matching logolona.png
-  const Emblem = () => (
-    <svg
-      width={46 * scale}
-      height={46 * scale}
-      viewBox="0 0 160 140"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="shrink-0 transition-transform duration-300 hover:scale-105"
-      aria-label="Fondation Lona Écusson"
-    >
-      <defs>
-        <linearGradient id={`lonaGoldGrad-${theme}`} x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor={goldLight} />
-          <stop offset="50%" stopColor={goldColor} />
-          <stop offset="100%" stopColor={goldDark} />
-        </linearGradient>
-      </defs>
-
-      {/* Outer arched halo dome */}
-      <path
-        d="M 24 86 A 56 56 0 0 1 136 86"
-        stroke={navyColor}
-        strokeWidth="14"
-        strokeLinecap="round"
-        fill="none"
-      />
-
-      {/* Open Book / Radiant Foundation Cradle */}
-      <path
-        d="M 16 82 C 44 96 68 96 80 120 C 92 96 116 96 144 82 C 140 106 120 122 80 128 C 40 122 20 106 16 82 Z"
-        fill={navyColor}
-      />
-      {/* Central Book Spine Divider */}
-      <path
-        d="M 80 104 L 80 128"
-        stroke={isWhite ? '#183D73' : '#FFFFFF'}
-        strokeWidth="2.5"
-        strokeLinecap="round"
-        opacity="0.9"
-      />
-
-      {/* Main Center 4-Point Golden Star */}
-      <path
-        d="M 80 44 Q 80 64 96 64 Q 80 64 80 84 Q 80 64 64 64 Q 80 64 80 44 Z"
-        fill={`url(#lonaGoldGrad-${theme})`}
-      />
-      <circle cx="80" cy="64" r="2.5" fill="#FFFBEB" opacity="0.9" />
-
-      {/* Upper Left 4-Point Golden Star */}
-      <path
-        d="M 52 36 Q 52 46 60 46 Q 52 46 52 56 Q 52 46 44 46 Q 52 46 52 36 Z"
-        fill={`url(#lonaGoldGrad-${theme})`}
-      />
-
-      {/* Upper Right 4-Point Golden Star */}
-      <path
-        d="M 108 24 Q 108 36 118 36 Q 108 36 108 48 Q 108 36 98 36 Q 108 36 108 24 Z"
-        fill={`url(#lonaGoldGrad-${theme})`}
-      />
-    </svg>
-  );
+  const currentHeight = heights[size];
 
   if (variant === 'emblem') {
-    return <Emblem />;
+    return (
+      <svg
+        viewBox="0 0 140 130"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={`${currentHeight} w-auto shrink-0 select-none ${className}`}
+        aria-label="Fondation Lona Écusson"
+      >
+        <defs>
+          <linearGradient id={`goldGrad-${theme}`} x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#FDE68A" />
+            <stop offset="50%" stopColor="#E8B84B" />
+            <stop offset="100%" stopColor="#B4821E" />
+          </linearGradient>
+          <radialGradient id={`starFlare-${theme}`} cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.95" />
+            <stop offset="100%" stopColor="#E8B84B" stopOpacity="0" />
+          </radialGradient>
+        </defs>
+
+        {/* Outer Arch Dome */}
+        <path
+          d="M 18 80 A 52 52 0 0 1 122 80"
+          stroke={mainColor}
+          strokeWidth="12"
+          strokeLinecap="round"
+          fill="none"
+        />
+
+        {/* Open Book Foundation */}
+        <path
+          d="M 10 76 C 36 90 58 90 70 114 C 82 90 104 90 130 76 C 126 98 106 114 70 120 C 34 114 14 98 10 76 Z"
+          fill={mainColor}
+        />
+        {/* Book Center Spine */}
+        <path
+          d="M 70 98 L 70 120"
+          stroke={dividerColor}
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          opacity="0.95"
+        />
+
+        {/* Radiant Spark Flare at Book Opening */}
+        <ellipse cx="70" cy="98" rx="8" ry="4" fill={`url(#starFlare-${theme})`} />
+
+        {/* Main Center 4-Point Golden Star */}
+        <path
+          d="M 70 42 Q 70 59 84 59 Q 70 59 70 76 Q 70 59 56 59 Q 70 59 70 42 Z"
+          fill={`url(#goldGrad-${theme})`}
+        />
+        <circle cx="70" cy="59" r="2.5" fill="#FFFFFF" />
+
+        {/* Upper Right 4-Point Golden Star */}
+        <path
+          d="M 96 24 Q 96 34 104 34 Q 96 34 96 44 Q 96 34 88 34 Q 96 34 96 24 Z"
+          fill={`url(#goldGrad-${theme})`}
+        />
+
+        {/* Upper Left 4-Point Golden Star */}
+        <path
+          d="M 46 34 Q 46 42 52 42 Q 46 42 46 50 Q 46 42 40 42 Q 46 42 46 34 Z"
+          fill={`url(#goldGrad-${theme})`}
+        />
+      </svg>
+    );
   }
 
   return (
-    <div className={`flex items-center gap-3.5 select-none ${className}`}>
-      {/* Brand Text (Left) */}
-      <div className="flex flex-col justify-center text-left">
-        <span
-          className="text-xs sm:text-sm font-semibold tracking-wider leading-none mb-0.5"
-          style={{ color: navyColor, fontFamily: 'Montserrat, sans-serif' }}
-        >
-          Fondation
-        </span>
-        <span
-          className="font-extrabold tracking-tight text-2xl sm:text-3xl leading-none"
-          style={{ color: navyColor, fontFamily: 'Montserrat, sans-serif' }}
-        >
-          Lona
-        </span>
+    <div className={`inline-flex flex-col select-none shrink-0 ${className}`}>
+      <svg
+        viewBox="0 0 380 130"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={`${currentHeight} w-auto shrink-0 transition-opacity duration-200`}
+        aria-label="Fondation Lona"
+      >
+        <defs>
+          <linearGradient id={`goldGradFull-${theme}`} x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#FDE68A" />
+            <stop offset="50%" stopColor="#E8B84B" />
+            <stop offset="100%" stopColor="#B4821E" />
+          </linearGradient>
+          <radialGradient id={`starFlareFull-${theme}`} cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stopColor="#FFFFFF" stopOpacity="0.95" />
+            <stop offset="100%" stopColor="#E8B84B" stopOpacity="0" />
+          </radialGradient>
+        </defs>
 
-        {showSlogan && (
-          <span
-            className="text-[10px] sm:text-[11px] italic tracking-tight font-medium mt-1 whitespace-nowrap"
-            style={{ color: sloganColor }}
+        {/* Brand Text (Left) */}
+        <g id="brand-text">
+          {/* 'Fondation' with clean elegant typography */}
+          <text
+            x="12"
+            y="44"
+            fontFamily="Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+            fontSize="28"
+            fontWeight="600"
+            fill={mainColor}
+            letterSpacing="0.2"
           >
-            Ensemble, semons l'excellence
-          </span>
-        )}
-      </div>
+            Fondation
+          </text>
 
-      {/* Official Emblem (Right) - faithfully matching logolona.png */}
-      <Emblem />
+          {/* Capital 'L' with the signature curved notch/leaf cutout in the corner matching logolona-png.png */}
+          <path
+            d="M 12 58 L 27 58 L 27 94 C 33 89 42 86 52 86 L 68 86 L 68 116 L 12 116 Z"
+            fill={mainColor}
+          />
+          <path
+            d="M 27 94 C 27 82 38 72 50 72 L 68 72 L 68 86 C 52 86 42 89 27 94 Z"
+            fill={isWhite ? '#0F2648' : '#FFFFFF'}
+          />
+
+          {/* 'ona' in bold matching logolona-png.png */}
+          <text
+            x="70"
+            y="116"
+            fontFamily="Montserrat, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+            fontSize="68"
+            fontWeight="800"
+            fill={mainColor}
+            letterSpacing="-2"
+          >
+            ona
+          </text>
+        </g>
+
+        {/* Emblem (Right) - Arched Dome, Radiant Open Book, 3 Golden Stars */}
+        <g id="brand-emblem" transform="translate(245, 0)">
+          {/* Outer Arch Dome */}
+          <path
+            d="M 18 80 A 54 54 0 0 1 126 80"
+            stroke={mainColor}
+            strokeWidth="13"
+            strokeLinecap="round"
+            fill="none"
+          />
+
+          {/* Open Book / Radiant Foundation Base */}
+          <path
+            d="M 10 76 C 38 90 60 90 72 114 C 84 90 106 90 134 76 C 130 98 110 114 72 120 C 34 114 14 98 10 76 Z"
+            fill={mainColor}
+          />
+          {/* Book Center Crease Divider */}
+          <path
+            d="M 72 98 L 72 120"
+            stroke={dividerColor}
+            strokeWidth="2.5"
+            strokeLinecap="round"
+            opacity="0.95"
+          />
+
+          {/* Core Radiant White Spark at Book Apex */}
+          <ellipse cx="72" cy="98" rx="9" ry="4.5" fill={`url(#starFlareFull-${theme})`} />
+
+          {/* Main Center 4-Point Golden Star */}
+          <path
+            d="M 72 40 Q 72 58 86 58 Q 72 58 72 76 Q 72 58 58 58 Q 72 58 72 40 Z"
+            fill={`url(#goldGradFull-${theme})`}
+          />
+          <circle cx="72" cy="58" r="2.5" fill="#FFFFFF" />
+
+          {/* Upper Right Golden Star */}
+          <path
+            d="M 98 22 Q 98 32 106 32 Q 98 32 98 42 Q 98 32 90 32 Q 98 32 98 22 Z"
+            fill={`url(#goldGradFull-${theme})`}
+          />
+
+          {/* Upper Left Golden Star */}
+          <path
+            d="M 48 32 Q 48 40 54 40 Q 48 40 48 48 Q 48 40 42 40 Q 48 40 48 32 Z"
+            fill={`url(#goldGradFull-${theme})`}
+          />
+        </g>
+      </svg>
+
+      {showSlogan && (
+        <span
+          className={`text-[10px] sm:text-[11px] italic tracking-tight font-medium mt-0.5 whitespace-nowrap pl-1 hidden sm:block ${
+            isWhite ? 'text-slate-300' : 'text-slate-500'
+          }`}
+        >
+          Ensemble, semons l'excellence
+        </span>
+      )}
     </div>
   );
 };
-

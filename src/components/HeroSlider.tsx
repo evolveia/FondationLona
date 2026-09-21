@@ -101,31 +101,31 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onExplorePillar, onDonat
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white tracking-tight leading-tight">
                 {t(activeSlide.titleKey)}
               </h1>
 
               {/* Subtitle */}
-              <p className="text-base sm:text-lg md:text-xl text-slate-200 font-normal leading-relaxed max-w-2xl">
+              <p className="text-xs sm:text-base md:text-lg lg:text-xl text-slate-200 font-normal leading-relaxed max-w-2xl">
                 {t(activeSlide.subtitleKey)}
               </p>
 
               {/* Action Buttons */}
-              <div className="pt-2 sm:pt-4 flex flex-wrap items-center gap-3 sm:gap-4">
+              <div className="pt-2 sm:pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4">
                 <button
                   id={`hero-cta-${activeSlide.id}`}
                   onClick={() => onExplorePillar(activeSlide.pillarId)}
-                  className="group flex items-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#E8B84B] to-[#D4A338] hover:from-[#f0c45b] hover:to-[#dfab3e] text-[#0F2648] font-bold text-sm sm:text-base uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 cursor-pointer focus:ring-2 focus:ring-[#E8B84B]"
+                  className="group flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-xl bg-gradient-to-r from-[#E8B84B] to-[#D4A338] hover:from-[#f0c45b] hover:to-[#dfab3e] text-[#0F2648] font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-200 cursor-pointer whitespace-nowrap"
                 >
                   <span>{t(activeSlide.ctaKey)}</span>
-                  <ArrowRight className="w-4 h-4 text-[#0F2648] group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-[#0F2648] group-hover:translate-x-1 transition-transform shrink-0" />
                 </button>
 
                 <button
                   onClick={onDonateClick}
-                  className="flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-md font-semibold text-sm sm:text-base uppercase tracking-wider transition-all duration-200 cursor-pointer"
+                  className="flex items-center justify-center gap-2 px-4 sm:px-6 py-2.5 sm:py-3.5 rounded-xl bg-white/10 hover:bg-white/20 text-white border border-white/30 backdrop-blur-md font-bold text-xs sm:text-sm uppercase tracking-wider transition-all duration-200 cursor-pointer whitespace-nowrap"
                 >
-                  <Heart className="w-4 h-4 text-[#E8B84B] fill-[#E8B84B]" />
+                  <Heart className="w-4 h-4 text-[#E8B84B] fill-[#E8B84B] shrink-0" />
                   <span>{t('cta.donate')}</span>
                 </button>
               </div>
@@ -135,20 +135,20 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onExplorePillar, onDonat
       </div>
 
       {/* Slider Controls (Bottom Bar & Arrows) */}
-      <div className="absolute bottom-6 sm:bottom-8 left-0 right-0 z-30">
+      <div className="absolute bottom-5 sm:bottom-8 left-0 right-0 z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Slide Indicator Pills */}
-          <div className="flex items-center gap-2.5 sm:gap-3">
+          <div className="flex items-center gap-2 sm:gap-3">
             {HERO_SLIDES.map((slide, index) => {
               const isActive = index === currentIndex;
               return (
                 <button
                   key={slide.id}
                   onClick={() => setCurrentIndex(index)}
-                  className={`h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                  className={`h-2 sm:h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                     isActive
-                      ? 'w-10 sm:w-12 bg-[#E8B84B]'
-                      : 'w-2.5 sm:w-3 bg-white/40 hover:bg-white/70'
+                      ? 'w-7 sm:w-12 bg-[#E8B84B]'
+                      : 'w-2 sm:w-3 bg-white/40 hover:bg-white/70'
                   }`}
                   aria-label={`Slide ${index + 1}`}
                 />
@@ -158,31 +158,31 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onExplorePillar, onDonat
             {/* Play / Pause Autoplay */}
             <button
               onClick={() => setIsPlaying(!isPlaying)}
-              className="ml-2 p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/80 transition-colors cursor-pointer text-xs"
+              className="ml-1 sm:ml-2 p-1 sm:p-1.5 rounded-full bg-white/10 hover:bg-white/20 text-white/80 transition-colors cursor-pointer text-xs"
               title={isPlaying ? 'Mettre en pause' : 'Lecture automatique'}
               aria-label={isPlaying ? 'Pause carrousel' : 'Play carrousel'}
             >
-              {isPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
+              {isPlaying ? <Pause className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> : <Play className="w-3 h-3 sm:w-3.5 sm:h-3.5" />}
             </button>
           </div>
 
           {/* Prev / Next Arrows */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2">
             <button
               id="slider-prev-btn"
               onClick={prevSlide}
-              className="p-3 rounded-full bg-white/10 hover:bg-white/25 text-white border border-white/20 backdrop-blur-md transition-all duration-200 cursor-pointer hover:scale-105 active:scale-95"
+              className="p-2 sm:p-3 rounded-full bg-white/10 hover:bg-white/25 text-white border border-white/20 backdrop-blur-md transition-all duration-200 cursor-pointer hover:scale-105 active:scale-95"
               aria-label="Diapositive précédente"
             >
-              <ChevronLeft className="w-5 h-5" />
+              <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
             <button
               id="slider-next-btn"
               onClick={nextSlide}
-              className="p-3 rounded-full bg-white/10 hover:bg-white/25 text-white border border-white/20 backdrop-blur-md transition-all duration-200 cursor-pointer hover:scale-105 active:scale-95"
+              className="p-2 sm:p-3 rounded-full bg-white/10 hover:bg-white/25 text-white border border-white/20 backdrop-blur-md transition-all duration-200 cursor-pointer hover:scale-105 active:scale-95"
               aria-label="Diapositive suivante"
             >
-              <ChevronRight className="w-5 h-5" />
+              <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </div>
         </div>

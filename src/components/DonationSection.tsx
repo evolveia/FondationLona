@@ -160,11 +160,11 @@ export const DonationSection: React.FC<DonationSectionProps> = ({ onOpenModal })
                   id="open-donation-modal-btn"
                   type="button"
                   onClick={() => handleOpen(selectedAmount)}
-                  className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-[#E8B84B] to-[#D4A338] hover:from-[#f0c45b] hover:to-[#dfab3e] text-[#0F2648] font-extrabold text-sm sm:text-base uppercase tracking-wider shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer group mt-4"
+                  className="w-full py-3.5 sm:py-4 px-3 sm:px-6 rounded-2xl bg-gradient-to-r from-[#E8B84B] to-[#D4A338] hover:from-[#f0c45b] hover:to-[#dfab3e] text-[#0F2648] font-extrabold text-xs sm:text-sm md:text-base uppercase tracking-wide shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer group mt-4 whitespace-nowrap"
                 >
-                  <Heart className="w-5 h-5 fill-[#0F2648] group-hover:scale-110 transition-transform" />
+                  <Heart className="w-4 h-4 sm:w-5 sm:h-5 fill-[#0F2648] group-hover:scale-110 transition-transform shrink-0" />
                   <span>Faire un Don de ${selectedAmount} USD</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 shrink-0" />
                 </button>
 
                 <div className="pt-2 text-center space-y-2">

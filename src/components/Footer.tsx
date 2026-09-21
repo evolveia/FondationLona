@@ -32,7 +32,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
           {/* Col 1: Brand & Presentation */}
           <div className="lg:col-span-4 space-y-4">
-            <LonaLogo variant="full" theme="white" showSlogan={true} size="lg" />
+            <LonaLogo variant="full" theme="white" showSlogan={false} size="lg" />
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed pt-2">
               {t('footer.about')}
             </p>

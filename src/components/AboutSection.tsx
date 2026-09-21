@@ -97,16 +97,16 @@ export const AboutSection: React.FC = () => {
             </div>
 
             {/* Key Commitment Pillars Tags */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
-              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 sm:gap-3 pt-2">
+              <div className="p-2.5 sm:p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E8B84B] shrink-0" />
                 <span className="text-xs font-semibold text-slate-800">Éducation 85%+</span>
               </div>
-              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2">
+              <div className="p-2.5 sm:p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E8B84B] shrink-0" />
                 <span className="text-xs font-semibold text-slate-800">Santé Drépanocytose</span>
               </div>
-              <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2">
+              <div className="p-2.5 sm:p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-[#E8B84B] shrink-0" />
                 <span className="text-xs font-semibold text-slate-800">Protection VBG</span>
               </div>
@@ -116,10 +116,10 @@ export const AboutSection: React.FC = () => {
 
         {/* Vision, Mission, Values Interactive Tabbed Cards */}
         <div className="mb-20">
-          <div className="flex justify-center gap-3 mb-8">
+          <div className="flex flex-wrap sm:flex-nowrap justify-center gap-2 sm:gap-3 mb-8">
             <button
               onClick={() => setActiveTab('vision')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 cursor-pointer ${
+              className={`flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-200 cursor-pointer whitespace-nowrap ${
                 activeTab === 'vision'
                   ? 'bg-[#183D73] text-white shadow-md'
                   : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
@@ -130,7 +130,7 @@ export const AboutSection: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveTab('mission')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 cursor-pointer ${
+              className={`flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-200 cursor-pointer whitespace-nowrap ${
                 activeTab === 'mission'
                   ? 'bg-[#183D73] text-white shadow-md'
                   : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
@@ -141,7 +141,7 @@ export const AboutSection: React.FC = () => {
             </button>
             <button
               onClick={() => setActiveTab('values')}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-xl font-bold text-sm transition-all duration-200 cursor-pointer ${
+              className={`flex items-center justify-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-200 cursor-pointer whitespace-nowrap ${
                 activeTab === 'values'
                   ? 'bg-[#183D73] text-white shadow-md'
                   : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'

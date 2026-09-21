@@ -95,22 +95,24 @@ export const PillarDetailModal: React.FC<PillarDetailModalProps> = ({
           </div>
 
           {/* Modal Actions */}
-          <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
+          <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-2.5">
             <button
               onClick={onClose}
-              className="px-4 py-2.5 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50 text-xs font-semibold"
+              className="px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl border border-slate-200 text-slate-600 hover:bg-slate-50 text-xs font-semibold cursor-pointer shrink-0"
             >
-              Fermer la vue détaillée
+              <span className="hidden sm:inline">Fermer la vue détaillée</span>
+              <span className="sm:hidden">Fermer</span>
             </button>
             <button
               onClick={() => {
                 onClose();
                 onDonateClick();
               }}
-              className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#E8B84B] to-[#D4A338] text-[#0F2648] font-bold text-xs uppercase tracking-wider shadow-md hover:shadow-lg transition-all"
+              className="flex items-center justify-center gap-1.5 sm:gap-2 px-4 sm:px-6 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-[#E8B84B] to-[#D4A338] text-[#0F2648] font-bold text-xs uppercase tracking-wide shadow-md hover:shadow-lg transition-all cursor-pointer whitespace-nowrap ml-auto"
             >
-              <Heart className="w-4 h-4 fill-[#0F2648]" />
-              <span>Soutenir cet axe d’intervention</span>
+              <Heart className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-[#0F2648] shrink-0" />
+              <span className="hidden sm:inline">Soutenir cet axe d’intervention</span>
+              <span className="sm:hidden">Soutenir cet axe</span>
             </button>
           </div>
         </div>
