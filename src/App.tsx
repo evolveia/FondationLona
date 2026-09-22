@@ -73,7 +73,7 @@ export function AppContent() {
         defaultAmount={modalAmount}
       />
 
-      {/* Floating AI Assistant & WhatsApp Official Channel (+55 21 98673-8943) */}
+      {/* Floating AI Assistant & WhatsApp Official Channel (+55 00 00000-0000) */}
       <ChatbotWidget />
     </div>
   );

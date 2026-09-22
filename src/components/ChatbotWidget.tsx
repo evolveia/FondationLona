@@ -139,7 +139,7 @@ export const ChatbotWidget: React.FC = () => {
         id: (Date.now() + 1).toString(),
         sender: 'bot',
         text:
-          "La Fondation Lona est à votre écoute. Vous pouvez également échanger directement avec notre secrétariat via WhatsApp au +55 21 98673-8943 pour une prise en charge immédiate.",
+          "La Fondation Lona est à votre écoute. Vous pouvez également échanger directement avec notre secrétariat via WhatsApp au +55 00 00000-0000 pour une prise en charge immédiate.",
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
       setMessages((prev) => [...prev, fallbackMsg]);
@@ -150,7 +150,7 @@ export const ChatbotWidget: React.FC = () => {
 
   // Generate WhatsApp Direct Link with structured payload
   const getWhatsAppLink = () => {
-    const phone = '5521986738943';
+    const phone = '5500000000000';
     let text = `*Bonjour Fondation Lona,*%0A%0A`;
     text += `Je vous contacte via le portail officiel.%0A`;
     if (userData.name) text += `*Nom:* ${encodeURIComponent(userData.name)}%0A`;
@@ -258,7 +258,7 @@ export const ChatbotWidget: React.FC = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 text-[#183D73] font-bold hover:text-[#E8B84B] transition-colors"
             >
-              <span>+55 21 98673-8943</span>
+              <span>+55 00 00000-0000</span>
               <ExternalLink className="w-3 h-3" />
             </a>
           </div>

@@ -53,7 +53,7 @@ Directives de communication :
 - Vous devez répondre dans la langue de l'utilisateur (Langue spécifiée : ${language}).
 - Si l'utilisateur pose une question sur les critères de la bourse EXCELLENTIA, rappelez qu'il faut avoir au moins 85% à l'Examen d'État et passer le test de sélection.
 - Si l'utilisateur souhaite faire un don ou devenir partenaire, orientez-le vers le formulaire officiel ou proposez-lui de finaliser sur WhatsApp.
-- Si l'utilisateur a renseigné ses coordonnées (Nom: ${userContact.name || 'Non précisé'}, Email: ${userContact.email || 'Non précisé'}, Tél: ${userContact.phone || 'Non précisé'}, Motif: ${userContact.interest || 'Non précisé'}), remerciez-le chaleureusement et invitez-le si besoin à cliquer sur le bouton WhatsApp pour contacter le cabinet de la Fondation directement (+55 21 98673-8943).
+- Si l'utilisateur a renseigné ses coordonnées (Nom: ${userContact.name || 'Non précisé'}, Email: ${userContact.email || 'Non précisé'}, Tél: ${userContact.phone || 'Non précisé'}, Motif: ${userContact.interest || 'Non précisé'}), remerciez-le chaleureusement et invitez-le si besoin à cliquer sur le bouton WhatsApp pour contacter le cabinet de la Fondation directement (+55 00 00000-0000).
 - Restez concis, professionnel et structuré.
 `;
 
@@ -97,7 +97,7 @@ Directives de communication :
           "La Fondation Lona assure la prise en charge holistique des survivantes de violences basées sur le genre (médicale, psychologique, juridique) et favorise l'émancipation économique des femmes par des micro-financements et formations techniques.";
       } else if (lower.includes("don") || lower.includes("donner") || lower.includes("donate") || lower.includes("partenaire")) {
         fallbackReply =
-          "Nous vous remercions pour votre générosité. Vous pouvez effectuer un don directement via la section 'Faire un don' de notre portail, ou échanger directement avec notre secrétariat via WhatsApp (+55 21 98673-8943).";
+          "Nous vous remercions pour votre générosité. Vous pouvez effectuer un don directement via la section 'Faire un don' de notre portail, ou échanger directement avec notre secrétariat via WhatsApp (+55 00 00000-0000).";
       } else {
         fallbackReply =
           "Bonjour et bienvenue à la Fondation Lona, sous le haut patronage de Son Excellence Madame la Première Dame Denise Nyakeru Tshisekedi. Nous œuvrons pour l'éducation, la santé et l'autonomie des femmes en RDC. En quoi puis-je vous renseigner aujourd'hui ?";

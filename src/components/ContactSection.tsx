@@ -83,8 +83,8 @@ export const ContactSection: React.FC = () => {
                     <h4 className="font-bold text-white text-xs uppercase tracking-wider mb-1">
                       {t('contact.phone_label')}
                     </h4>
-                    <p className="text-slate-300">+243 81 000 5662</p>
-                    <p className="text-xs text-slate-400">WhatsApp Institutionnel : +55 21 98673-8943</p>
+                    <p className="text-slate-300">+55 00 00000-0000</p>
+                    <p className="text-xs text-slate-400">WhatsApp Institutionnel : +55 00 00000-0000</p>
                   </div>
                 </div>
 
